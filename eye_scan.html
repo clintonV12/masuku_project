@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iris Scan Simulation</title>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #1a1a1d;
+    color: #eceff4;
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  #camera-stream {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border: 5px solid #4c566a;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  #start-scan {
+    margin-top: 15px;
+    padding: 12px 25px;
+    background-color: #4c566a;
+    color: #eceff4;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+    max-width: 200px;
+    width: 100%;
+  }
+
+  #start-scan:hover {
+    background-color: #5e81ac;
+  }
+
+  #start-scan:active {
+    background-color: #3b4252;
+  }
+
+  .message {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #88c0d0;
+    text-align: center;
+  }
+
+  /* Responsive styling for smaller screens */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 1.2em;
+    }
+    #start-scan {
+      font-size: 0.9em;
+      padding: 10px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>Iris Scan Simulation</h1>
+<video id="camera-stream" autoplay></video>
+<button id="start-scan">Start Scan</button>
+<div id="scan-result" class="message">Result will appear here.</div>
+
+<script>
+  const video = document.getElementById('camera-stream');
+  const startScanButton = document.getElementById('start-scan');
+  const scanResult = document.getElementById('scan-result');
+
+  async function startCamera() {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      video.srcObject = stream;
+    } catch (error) {
+      alert('Camera access is required for iris scanning.');
+    }
+  }
+
+  function simulateDilationDetection() {
+    const isDilated = Math.random() > 0.5;
+
+    if (isDilated) {
+      scanResult.textContent = "Pupil dilation detected! User may be intoxicated.";
+      scanResult.style.color = "#ff5f5f";
+    } else {
+      scanResult.textContent = "No pupil dilation detected. User appears sober.";
+      scanResult.style.color = "#88c0d0";
+    }
+  }
+
+  startScanButton.addEventListener('click', simulateDilationDetection);
+  
+  // Start the camera when the page loads
+  startCamera();
+</script>
+
+</body>
+</html>
