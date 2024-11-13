@@ -4,12 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sober Seeker</title>
+
 <!-- Bootstrap CSS -->
-<link href="css/core.css" rel="stylesheet">
-<link href="css/theme-default.css" rel="stylesheet">
+<link href="assets/css/core.css" rel="stylesheet">
+<link href="assets/css/theme-default.css" rel="stylesheet">
+<link href="assets/css/page-auth.css" rel="stylesheet">
+
 <!-- Bootstrap Icons -->
-<link rel="stylesheet" href="css/fonts/boxicons.css" />
-<link rel="stylesheet" href="css/animate/animate.min.css"/>
+<link rel="stylesheet" href="assets/css/fonts/boxicons.css" />
+<link rel="stylesheet" href="assets/css/animate/animate.min.css"/>
 <style>
   body {
     background: linear-gradient(135deg, #2e3b4e, #232a35);
@@ -122,90 +125,91 @@
   }
 </style>
 </head>
+
 <body>
-
-    <div class="container-xxl">
-      <div class="authentication-wrapper authentication-basic container-p-y">
-        <div class="authentication-inner">
-          <!-- Register -->
-          <div class="card rounded-3 wow bounceInDown" data-wow-delay="0.5s">
-            <div class="card-body">
-              <!-- Logo -->
-              <div class="app-brand justify-content-center mb-3">
-                <a href="#" class="app-brand-link gap-2">
-                  <span class="app-brand-text demo text-body fw-bolder fs-1">
-                    <span class="text-dark">Sober</span>
-                    <span class="text-warning"><i class="bx bx-drink bx-sm"></i></span>
-                    <span class="text-dark">Seeker</span>
-                  </span>
-                </a>
-              </div>
-              <!-- /Logo -->
-
-              <form id="formAuthentication" class="mb-3">
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email or Username</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="email"
-                    name="email-username"
-                    placeholder="Enter your email or username"
-                    autofocus
-                  />
-                </div>
-                <div class="mb-3 form-password-toggle">
-                  <div class="d-flex justify-content-between">
-                    <label class="form-label" for="password">Password</label>
-                    <a href="#" class="text-dark">
-                      <small>Forgot Password?</small>
-                    </a>
-                  </div>
-                  <div class="input-group input-group-merge">
-                    <input
-                      type="password"
-                      id="password"
-                      class="form-control"
-                      name="password"
-                      placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                      aria-describedby="password"
-                    />
-                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
-                  </div>
-                </div>
-                
-                <div class="mb-3">
-                  <button class="btn btn-dark d-grid w-100 fw-bolder rounded-pill" onclick="enterSite()" type="button">Proceed</button>
-                </div>
-              </form>
-
-              <p class="text-center">
-                <span class="text-dark">New on our platform?</span><br>
-                <a href="#" class="text-info">
-                  <span>Create an account</span>
-                </a>
-              </p>
+  <div class="container-xxl">
+    <div class="authentication-wrapper authentication-basic container-p-y">
+      <div class="authentication-inner">
+        <!-- Register -->
+        <div class="card rounded-3 wow bounceInDown" data-wow-delay="0.5s">
+          <div class="card-body">
+            <!-- Logo -->
+            <div class="app-brand justify-content-center mb-3">
+              <a href="#" class="app-brand-link gap-2">
+                <span class="app-brand-text demo text-body fw-bolder fs-1">
+                  <span class="text-dark">Sober</span>
+                  <span class="text-warning"><i class="bx bx-drink bx-sm"></i></span>
+                  <span class="text-dark">Seeker</span>
+                </span>
+              </a>
             </div>
+            <!-- /Logo -->
+
+            <form id="formAuthentication" class="mb-3">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email or Username</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="email"
+                  name="email-username"
+                  placeholder="Enter your email or username"
+                  autofocus
+                />
+              </div>
+
+              <div class="mb-3 form-password-toggle">
+                <div class="d-flex justify-content-between">
+                  <label class="form-label" for="password">Password</label>
+                  <a href="#" class="text-dark">
+                    <small>Forgot Password?</small>
+                  </a>
+                </div>
+                <div class="input-group input-group-merge">
+                  <input
+                    type="password"
+                    id="password"
+                    class="form-control"
+                    name="password"
+                    placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                    aria-describedby="password"
+                  />
+                  <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <button class="btn btn-dark d-grid w-100 fw-bolder rounded-pill" onclick="enterSite()" type="button">Proceed</button>
+              </div>
+            </form>
+
+            <p class="text-center">
+              <span class="text-dark">New on our platform?</span><br>
+              <a href="#" class="text-info">
+                <span>Create an account</span>
+              </a>
+            </p>
           </div>
-          <!-- /Register -->
         </div>
+        <!-- /Register -->
       </div>
     </div>
+  </div>
 
-<script>
-  // Redirect to the main quiz page
-  function enterSite() {
-    window.location.href = "game.html";  // Replace with your quiz page URL
-  }
-</script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/wow/wow.min.js"></script>
+  <script>
+    // Redirect to the main quiz page
+    function enterSite() {
+      window.location.href = "base.html";  // Replace with your quiz page URL
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/wow/wow.min.js"></script>
 
-<script>
-    // Initiate the wowjs
-    new WOW().init();
-</script>
+  <script>
+      // Initiate the wowjs
+      new WOW().init();
+  </script>
 
 </body>
 </html>
