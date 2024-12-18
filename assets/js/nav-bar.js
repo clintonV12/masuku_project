@@ -94,7 +94,7 @@ function goToQuiz() {
 }
 
 function exitSite() {
-    window.location.href = "launch.html";  // Replace with your quiz page URL
+    window.location.href = "index.html";  // Replace with your quiz page URL
 }
 
 function refreshPoints() {

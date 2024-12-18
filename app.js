@@ -2,6 +2,9 @@
 import { Quiz } from './components/quiz.js';
 import { Info } from './components/info.js';
 import { Puzzle } from './components/puzzle.js';
+import { Physical } from './components/physical.js';
+import { PhysicalResult } from './components/physical_result.js';
+import { Transport } from './components/transport.js';
 
 let pagename = 'quiz'; // Default to 'home' page
 
@@ -53,6 +56,23 @@ async function router() {
             script2.src = 'assets/js/puzzle.js';
             script2.async = true;
             document.body.appendChild(script2);
+            break;
+        case 'physical':
+            content = await Physical();
+            const script3 = document.createElement('script');
+            script3.src = 'assets/js/physical.js';
+            script3.async = true;
+            document.body.appendChild(script3);
+            break;
+        case 'physical_result':
+            content = await PhysicalResult();
+            const script4 = document.createElement('script');
+            script4.src = 'assets/js/physical_result.js';
+            script4.async = true;
+            document.body.appendChild(script4);
+            break;
+        case 'transport':
+            content = await Transport();
             break;
         default:
             content = await Quiz();

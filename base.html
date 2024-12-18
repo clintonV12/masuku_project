@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="assets/css/fonts/boxicons.css"/>
     <style>
       body {
-        background: linear-gradient(135deg, #2e3b4e, #232a35);
+        /*background: linear-gradient(135deg, #2e3b4e, #232a35);*/
+        background: #ffd700;
         color: #eceff4;
         display: flex;
         justify-content: center;
@@ -47,7 +48,7 @@
 
       .container {
         max-width: 500px;
-        background: rgba(44, 50, 63, 0.9);
+        background: #ffd700;/*rgba(44, 50, 63, 0.9);*/
         border: 1px solid #3b4252;
         border-radius: 15px;
         padding: 25px;
@@ -119,6 +120,73 @@
           margin-bottom: 10px;
         }
       }
+
+       .scanner-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    #camera-stream {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 8px;
+    }
+
+    .eye {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #000;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .pupil {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #fff;
+    }
+
+    .scanner {
+        width: 100px;
+        height: 5px;
+        background-color: red;
+        animation: scan 2s infinite;
+    }
+
+    @keyframes scan {
+        0% { transform: translateY(-50px); }
+        50% { transform: translateY(0); }
+        100% { transform: translateY(-50px); }
+    }
+
+    .scan-text {
+        font-size: 20px;
+        color: #fff;
+        margin: 10px 0;
+    }
+
+    .progress-container {
+        width: 100%;
+        max-width: 400px;
+        height: 20px;
+        background-color: #333;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .progress-bar {
+        height: 100%;
+        width: 0;
+        background-color: #00ff00;
+    }
     </style>
     <script src="assets/js/controller.js"></script>
   </head>
@@ -129,7 +197,7 @@
         <div class="layout-page">
           <!-- Fixed Navbar with Back button and Hamburger Menu -->
 
-          <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar"></nav>
+          <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar" style="border-bottom: none;"></nav>
 
           <div
               class="bs-toast toast toast-placement-ex m-2"
@@ -163,5 +231,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/ui-helpers.js"></script>
+
   </body>
 </html>
